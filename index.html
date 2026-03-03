@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Design Portfolio | 亚马逊电商设计作品集</title>
+    <style>
+        /* 1. 基础样式设定 */
+        body {
+            background: #121212; /* 深色背景更能衬托白底的主图 */
+            color: #eeeeee;
+            font-family: "Segoe UI", "Amazon Ember", Arial, sans-serif;
+            margin: 0;
+            padding: 60px 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 970px; /* 严格遵循亚马逊 A+ 标准宽度 */
+            margin: 0 auto;
+        }
+
+        h1.page-title {
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 50px;
+            color: #febd69; /* 亚马逊标志性橙色 */
+        }
+
+        /* 2. Listing 头部区域 (主图 + 副图) */
+        .listing-header {
+        display: grid;
+        /* 关键：左边固定 600px，右边自动 */
+        grid-template-columns: 600px auto; 
+        gap: 20px;
+        width: 990px; /* 600(主) + 20(间距) + 370(副) */
+        margin: 0 auto;
+        align-items: start;
+        }
+
+        /* 主图展示区 */
+        .main-stage {
+        position: relative; /* 核心修复：为 .label 提供定位基准 */
+        width: 100%; /* 占据左侧列的全部宽度 */
+        aspect-ratio: 1 / 1; /* 核心：强制容器变为 1:1 正方形 */
+        background: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 8px;
+        padding: 0; /* 确保没有内边距挤压图片 */
+        }
+
+        .main-stage img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* 保证正方形图片完美填满正方形容器 */
+        }
+
+        .label {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #febd69;
+            color: #111;
+            padding: 5px 12px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        /* 副图 2x3 网格 */
+        .sub-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 185px); /* 固定副图宽度，2列正好 370px左右 */
+        grid-template-rows: repeat(3, 1fr);
+        gap: 12px;
+        }
+
+        .sub-item {
+        background: #ffffff;
+        width: 100%;
+        /* 核心：强制副图也保持 1:1 正方形 */
+        aspect-ratio: 1 / 1; 
+        border-radius: 4px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .sub-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(254, 189, 105, 0.3);
+        }
+
+        .sub-item img {
+        width: 100%;
+        height: 100%;
+        /* 覆盖填充，确保不留白边 */
+        object-fit: cover; 
+        }
+        .bottom-four-grid {
+    display: grid;
+    /* 这里的 gap 必须和上方 sub-grid 的 gap (12px) 保持一致 */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 12px;
+    margin-top: 12px; /* 与上方图片的垂直间距 */
+    /* 如果你想让它作为 listing-header 的一部分并跨两列显示 */
+    grid-column: 1 / span 2; 
+}
+
+/* 确保这些新图也是正方形且铺满 */
+.bottom-four-grid .sub-item {
+    background: #ffffff;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+}
+
+.bottom-four-grid .sub-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+        /* 3. A+ Content 详情页区域 */
+        .aplus-section {
+            margin-top: 100px;
+        }
+
+        .aplus-title {
+            font-size: 22px;
+            margin-bottom: 25px;
+            border-left: 5px solid #febd69;
+            padding-left: 15px;
+            font-weight: 400;
+        }
+
+        /* A+ 模块拼接容器 */
+        .aplus-wrapper {
+            background: #ffffff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        }
+
+        /* 核心：消除长图之间的缝隙 */
+        .aplus-wrapper img {
+            width: 100%;
+            display: block; /* 必须是 block 以消除基线间隙 */
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+        /* 页脚提示 */
+        footer {
+            text-align: center;
+            margin-top: 100px;
+            font-size: 14px;
+            color: #666;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="page-title">PRODUCT DESIGN SHOWCASE</h1>
+
+        <section class="listing-header">
+            <div class="main-stage">
+                <span class="label">Main Image</span>
+                <img src="image/A-2.jpg" alt="亚马逊主图">
+            </div>
+
+            <div class="sub-grid">
+                <div class="sub-item"><img src="image/A-1.jpg" alt="副图1"></div>
+                <div class="sub-item"><img src="image/A-3.jpg" alt="副图2"></div>
+                <div class="sub-item"><img src="image/A-4.jpg" alt="副图3"></div>
+                <div class="sub-item"><img src="image/A-5.jpg" alt="副图4"></div>
+                <div class="sub-item"><img src="image/A-6.jpg" alt="副图5"></div>
+                <div class="sub-item"><img src="image/A-9.jpg " alt="副图6"></div>
+            </div>
+
+            <div class="main-stage">
+                <span class="label">Main Image</span>
+                <img src="image/B-3.jpg" alt="亚马逊主图">
+            </div>
+
+             <div class="sub-grid">
+                <div class="sub-item"><img src="image/B-1.jpg" alt="副图1"></div>
+                <div class="sub-item"><img src="image/B-2.jpg" alt="副图2"></div>
+                <div class="sub-item"><img src="image/B-4.jpg" alt="副图3"></div>
+                <div class="sub-item"><img src="image/B-5.jpg" alt="副图4"></div>
+                <div class="sub-item"><img src="image/B-6.jpg" alt="副图5"></div>
+                <div class="sub-item"><img src="image/B-7.jpg " alt="副图6"></div>
+            </div>
+
+            <div class="main-stage">
+                <span class="label">Main Image</span>
+                <img src="image/C-2.jpg" alt="亚马逊主图">
+            </div>
+
+            <div class="sub-grid">
+                <div class="sub-item"><img src="image/C-1.jpg" alt="副图1"></div>
+                <div class="sub-item"><img src="image/C-3.jpg" alt="副图2"></div>
+                <div class="sub-item"><img src="image/C-4.jpg" alt="副图3"></div>
+                <div class="sub-item"><img src="image/C-6.jpg" alt="副图4"></div>
+                <div class="sub-item"><img src="image/C-7.jpg" alt="副图5"></div>
+                <div class="sub-item"><img src="image/C-8.jpg " alt="副图6"></div>
+            </div>
+
+            <div class="bottom-four-grid">
+               <div class="sub-item"><img src="image/D-1.jpg" alt="副图7"></div>
+               <div class="sub-item"><img src="image/D-2.jpg" alt="副图8"></div>
+               <div class="sub-item"><img src="image/D-3.jpg" alt="副图9"></div>
+               <div class="sub-item"><img src="image/D-4.jpg" alt="副图10"></div>
+            </div>
+        </section>
+
+        <section class="aplus-section">
+            <h2 class="aplus-title">A+ Content Details</h2>
+            <div class="aplus-wrapper">
+                <img src="image/aplus_01.jpg" alt="A+模块1">
+                <img src="image/aplus_02.jpg" alt="A+模块2">
+                <img src="image/aplus_03.jpg" alt="A+模块3">
+                <img src="image/aplus_04.jpg" alt="A+模块4">
+                <img src="image/aplus_05.jpg" alt="A+模块5">
+            </div>
+        </section>
+
+        <footer>
+            &copy; 2026 Amazon Design Portfolio. All images are 970px Standard.
+        </footer>
+    </div>
+
+</body>
+</html>
