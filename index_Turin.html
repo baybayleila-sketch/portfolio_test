@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Leila | Amazon Product Designer</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#0f0f0f;
+    color:#fff;
+}
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:48px;
+    font-weight:300;
+}
+
+.hero p{
+    color:#aaa;
+}
+
+.btn{
+    margin-top:20px;
+    padding:12px 24px;
+    background:#febd69;
+    color:#000;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    padding:60px;
+}
+
+.card{
+    background:#1a1a1a;
+    border-radius:10px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    display:block;
+}
+
+.card p{
+    padding:12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+    <h1>Leila</h1>
+    <p>Amazon Product Designer · A+ Content · Product Visualization · Motion Ads</p>
+    <a class="btn" href="#projects">View Projects</a>
+</div>
+
+<div id="projects" class="grid">
+
+    <a class="card" href="project-carseatcover.html">
+        <img src="image/A-2.jpg">
+        <p>carseatcover Amazon Listing</p>
+    </a>
+
+    <a class="card" href="project-home.html">
+        <img src="image/B-3.jpg">
+        <p>Home Decor Product Design</p>
+    </a>
+
+    <a class="card" href="project-video.html">
+        <img src="image/video_cover_01.jpg">
+        <p>Motion & Video Ads</p>
+    </a>
+
+</div>
+
+</body>
+</html>
