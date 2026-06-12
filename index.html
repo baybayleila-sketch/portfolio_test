@@ -167,6 +167,54 @@
             color: #666;
         }
 
+        .video-section {
+    margin-top: 100px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.video-card {
+    background: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(254, 189, 105, 0.2);
+}
+
+.video-card img {
+    width: 100%;
+    display: block;
+}
+
+.video-info {
+    padding: 15px;
+}
+
+.video-info h3 {
+    font-size: 14px;
+    margin: 0 0 10px 0;
+    font-weight: 400;
+    color: #fff;
+}
+
+.video-info a {
+    color: #febd69;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.video-info a:hover {
+    text-decoration: underline;
+}
+
     </style>
 </head>
 <body>
@@ -224,6 +272,47 @@
                <div class="sub-item"><img src="image/D-4.jpg" alt="副图10"></div>
             </div>
         </section>
+
+        <section class="video-section">
+    <h2 class="aplus-title">Motion & Video Projects</h2>
+
+    <div class="video-grid">
+
+        <!-- Video 1 -->
+        <div class="video-card">
+            <img src="image/video_cover_01.jpg" alt="Video 1 Cover">
+            <div class="video-info">
+                <h3>Amazon Product showcase Video - carseatcover breathe 1</h3>
+                <a href="https://youtu.be/mM0EMJOp_gU" target="_blank">
+                    ▶ Watch on YouTube
+                </a>
+            </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-card">
+            <img src="image/video_cover_02.jpg" alt="Video 2 Cover">
+            <div class="video-info">
+                <h3>TikTok Product Ad - Home Decor</h3>
+                <a href="https://youtu.be/DRNIgcQ7Ee0" target="_blank">
+                    ▶ Watch on YouTube
+                </a>
+            </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="video-card">
+            <img src="image/video_cover_03.jpg" alt="Video 3 Cover">
+            <div class="video-info">
+                <h3>Walmart Listing Video</h3>
+                <a href="https://youtu.be/HbQ-paQzOEs" target="_blank">
+                    ▶ Watch on YouTube
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
 
         <section class="aplus-section">
             <h2 class="aplus-title">A+ Content Details</h2>
